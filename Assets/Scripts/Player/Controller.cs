@@ -1,29 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5f;
+    // Movement variables
+    [SerializeField] private float movementSpeed = 10f;
+    [Space]
+
+    // Camera
     [SerializeField] Camera mainCamera;
+
+    // Components | Scripts
+    Rigidbody myRigidbody;
+
+
+    void Start()
+    {
+        myRigidbody = this.transform.GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            this.transform.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * movementSpeed);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            this.transform.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * -movementSpeed);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            this.transform.GetComponent<Rigidbody>().AddForce(mainCamera.transform.right * movementSpeed);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            this.transform.GetComponent<Rigidbody>().AddForce(mainCamera.transform.right * -movementSpeed);
-        }
+        float movX = Input.GetAxisRaw("Horizontal");
+        float movZ = Input.GetAxisRaw("Vertical");
+
+        Vector3 lateralMovement = transform.right * movX;
+        Vector3 forwardMovement = transform.forward * movZ;
+
+        Vector3 movementInput = (lateralMovement + forwardMovement).normalized * movementSpeed;
+
+        if (movementInput != Vector3.zero) Move(movementInput);
+    }
+
+    private void Move(Vector3 _movementInput)
+    {
+        myRigidbody.MovePosition(myRigidbody.position + _movementInput * Time.deltaTime);
     }
 }

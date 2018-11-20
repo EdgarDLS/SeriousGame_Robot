@@ -13,6 +13,9 @@ public class FirstPersonCamera : MonoBehaviour
     [SerializeField] private float yaw;
     [SerializeField] private float pitch;
 
+    // Player
+    [SerializeField] private GameObject player;
+
     // Camera values
     Vector3 rotationSmoothVelocity;
     Vector3 currentRotation;
@@ -34,7 +37,12 @@ public class FirstPersonCamera : MonoBehaviour
             pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
             currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
-            transform.eulerAngles = currentRotation;
+
+            // Rotate the player only in the Y axis
+            player.transform.eulerAngles = new Vector3(0, currentRotation.y, 0);
+
+            // Rotate the camera
+            this.transform.eulerAngles = currentRotation;
         }
 
 
