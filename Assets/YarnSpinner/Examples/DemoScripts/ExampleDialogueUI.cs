@@ -117,7 +117,7 @@ namespace Yarn.Unity.Example {
             }
 
             // Hide the text and prompt
-            lineText.gameObject.SetActive (false);
+            //lineText.gameObject.SetActive (false);
 
             if (continuePrompt != null)
                 continuePrompt.SetActive (false);
