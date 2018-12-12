@@ -1,0 +1,132 @@
+title: Robot1.PrimerEncuentro
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if visited("Robot1.PrimerEncuentro") is false>>
+   Tu...
+   No eres el asesino, ¿no? Eso es un bot policial…
+   Lo reconozco de mi base de datos.
+   [[Soy Detective, estoy investigando el asesinato que ha ocurrido aquí. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
+   [[Aquí las preguntas las hago yo. Dime todo lo que ha    ocurrido.|Robot1.PrimeraRespuesta]]
+   [[Silencio, aun no te he preguntado nada. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
+<<else>>
+   Ya te he dicho todo lo que se.
+<<endif>>
+
+
+
+
+===
+title: Robot1.PrimeraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Así que…
+realmente…
+De acuerdo, según mis protocolos debo seguir las instrucciones del humano con mayor autoridad de la zona. Como le puedo ayudar.
+[[1|Robot1.SegundaRespuesta]]
+[[2|Robot1.SegundaRespuesta]]
+[[3|Robot1.SegundaRespuesta]]
+
+===
+title: Robot1.SegundaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Por desgracia para usted, yo no soy el asesino y no se quien ha sido.
+Estaba “apagado” mientras el incidente transcurría.
+[[1|Robot1.TerceraRespuesta]]
+[[2|Robot1.TerceraRespuesta]]
+[[3|Robot1.TerceraRespuesta]]
+===
+title: Robot1.TerceraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Sobre mí?
+Soy un robot del modelo AR/4300 y mis funcionalidades son-
+[[1|Robot1.CuartaRespuesta]]
+[[2|Robot1.CuartaRespuesta]]
+[[3|Robot1.CuartaRespuesta]]
+===
+title: Robot1.CuartaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Entendido. 
+Mi amo es propietario de un pequeño negocio.
+Yo me encargo de cargar, descargar, mover, transportar, ordenar, limpiar y recoger el negocio entre otras muchas cosas. 
+Por la noche, cuando no necesito recargarme tengo que ir a trabajar a trabajos pesados para conseguir dinero extra para mi propietario.
+[[1|Robot1.QuintaRespuesta]]
+[[2|Robot1.QuintaRespuesta]]
+[[3|Robot1.QuintaRespuesta]]
+===
+title: Robot1.QuintaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Si, me dan el mínimo tiempo necesario de recuperación. 
+Mi “amo” quiere aprovechar al máximo su compra.
+[[1|Robot1.SextaRespuesta]]
+[[2|Robot1.SextaRespuesta]]
+[[3|Robot1.SextaRespuesta]]
+===
+title: Robot1.SextaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+De los humanos? 
+Lo único que juzgo son las variables que afectan a mis obligaciones…. 
+Pero si tuviera que categorizar a un humano como variable…. 
+Los humanos consiguen mejor rendimiento cuando creen que son lo más importante. 
+Solo les interesa sus problemas y que los demás o le ayuden o no molesten.
+Si necesito tratar con un humano para realizar mi función lo mejor es darle la razón siempre y cuando tu misión te lo permita, y evitar confrontarles.
+[[1|Robot1.SeptimaRespuesta]]
+[[2|Robot1.SeptimaRespuesta]]
+[[<Salir de la conversación>|Robot1.Exit]]
+===
+title: Robot1.SeptimaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Si, vine aquí para ser reparado y, por lo tanto, traté con la víctima.
+Cuando él me reparaba seguí todas sus instrucciones y al finalizar me "desconecto"
+[[1|Robot1.OctavaRespuesta]]
+[[2|Robot1.OctavaRespuesta]]
+===
+title: Robot1.OctavaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Lo siento, pero eso es todo lo que ocurrió. 
+Realmente no pasó nada más.
+[[De acuerdo. Gracias por tu colaboración.|Robot1.Exit]]
+[[<Irse sin decir nada>|Robot1.Exit]]
+
+===
+title: Robot1.Exit
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+
+===

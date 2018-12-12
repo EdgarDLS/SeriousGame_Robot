@@ -1,0 +1,158 @@
+title: Robot2.PrimerEncuentro
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if visited("Robot2.PrimerEncuentro") is false>>
+   Jamás pensé que me vería envuelto en un asesinato…
+   ¡Es como en uno de los escenarios de ese popular personaje ficticio de hace bastante más de un siglo!
+   [[Silencio.|Robot2.PrimeraRespuestao]]
+   [[Callate.|Robot2.PrimeraRespuesta]]
+   [[Por favor, mantenga la seriedad.|Robot2.PrimeraRespuesta]]
+<<else>>
+   Meow meow meow.
+<<endif>>
+
+
+===
+title: Robot2.PrimeraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Ah! 
+Claro
+por supuesto. 
+Interrogar a los “sospechosos”
+¿no? 
+¿Qué quieres saber?
+[[1.|Robot2.SegundaRespuesta]]
+[[2.|Robot2.SegundaRespuesta]]
+[[3.|Robot2.SegundaRespuesta]]
+===
+title: Robot2.SegundaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+No, yo no fui quien asesino a la víctima. 
+Tan solo me trajeron aquí para ser reparado, asique cuando me “trató” simplemente seguí sus instrucciones.
+[[1.|Robot2.TerceraRespuesta]]
+[[2.|Robot2.TerceraRespuesta]]
+[[3.|Robot2.TerceraRespuesta]]
+===
+title: Robot2.TerceraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+¿Quieres saber mi perfil? 
+Claro
+un asesino jamás admitiría serlo…
+o el caso no sería interesante…
+[[1.|Robot2.CuartaRespuesta]]
+[[2.|Robot2.CuartaRespuesta]]
+[[3.|Robot2.CuartaRespuesta]]
+===
+title: Robot2.CuartaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Discúlpeme señor detective.
+Me dieron varias historias detectivescas tanto para probar como para desarrollar mi capacidad de observación para el trabajo que querían otorgarme.
+Sin embargo, después de tantos problemas lógicos, soluciones inusuales, los giros totales por una pista sorpresa…
+Acabe cogiéndole “gusto”, como suelen decir los humanos.
+[[1.|Robot2.QuintaRespuesta]]
+[[2.|Robot2.QuintaRespuesta]]
+[[3.|Robot2.QuintaRespuesta]]
+===
+title: Robot2.QuintaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Ah, por supuesto.
+Como iba diciendo, yo trabajo como asistente de hospital.
+Es decir, ayudo tanto a los pacientes con problemas psicológicos
+de allí que necesite buenas capacidades de observación
+y ayudo a médicos y enfermeros con los cuidados u operaciones.
+Por lo tanto, poseo conocimiento médico y sobre la anatomía humana.
+[[1.|Robot2.SextaRespuesta]]
+[[2.|Robot2.SextaRespuesta]]
+[[3.|Robot2.SextaRespuesta]]
+===
+title: Robot2.SextaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Como os veo? 
+Bueno
+eso es una pregunta extraña. 
+Los humanos sois nuestros creadores y una paradoja lógica.
+Intentáis hacer todas vuestras acciones de forma lógica y metódica pero siempre entra un factor irregular que hace que vuestras acciones sean difíciles de predecir.
+Por lo tanto
+me gusta mucho observaros y crear patrones algorítmicos que-
+[[1.|Robot2.SeptimaRespuesta]]
+[[2.|Robot2.SeptimaRespuesta]]
+[[3.|Robot2.SeptimaRespuesta]]
+===
+title: Robot2.SeptimaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Bueno
+si me permite un par de observaciones…
+[[1.|Robot2.OctavaRespuesta]]
+[[2.|Robot2.OctavaRespuesta]]
+[[3.|Robot2.OctavaRespuesta]]
+===
+title: Robot2.OctavaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Viendo cómo se encuentra la víctima,
+sin rastro de forcejeo,
+debió de recibir un ataque sorpresa o una muerte inmediata.
+En cualquier caso,
+solo pudo hacerlo uno de los robots de la sala si nadie más entro en el edificio.
+Sin embargo,
+¿podría uno de los míos tener motivos para hacer algo así?
+A no ser que estuviese siguiendo órdenes de otra persona, no le veo sentido.
+[[1.|Robot2.NovenaRespuesta]]
+[[2.|Robot2.NovenaRespuesta]]
+[[3.|Robot2.NovenaRespuesta]]
+===
+title: Robot2.NovenaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Lo que insinuó, es que dejando de lado la supuesta defectuosidad.
+Podría ser que el asesino solo fuese un peón.
+Que algún tipo de virus comiera su comportamiento para asaltar a la víctima y crear un caso de habitación cerrada.
+[[1.|Robot2.Exit]]
+[[2.|Robot2.Exit]]
+[[3.|Robot2.Exit]]
+===
+title: Robot2.Exit
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+
+===

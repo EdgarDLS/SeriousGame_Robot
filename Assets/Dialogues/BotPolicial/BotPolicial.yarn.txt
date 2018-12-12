@@ -1,0 +1,48 @@
+title: BotPolicial.Start
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if visited("BotPolicial.Start") is false>>
+   Inspector,
+   este es el edificio de donde se originó la señal de socorro. 
+   Edifico B7 en el área G11 del distrito industrial.
+   Tu misión encomendada es averiguar el motivo de la señal y resolver el problema.
+   Yo aportare toda la tecnología y apoyo que necesites, siempre y cuando no se trate de levantar objetos.
+
+<<elseif $abrirPuerta is true>>
+   Espere un segundo mientras abro la puerta, inspector.
+   Conectando IA Seguridad, Dron policial D11452 exige el acceso a esta instalación.
+   Aplicando el uso de la ley G15 de auxilio y investigación...
+   ...
+
+   Seguridad - Acceso denegado.
+   El mayor responsable de las instalaciones ha aplicado el nivel de seguridad 564.
+   Solo humanos con autoridad tienen derecho a entrar con tal de evitar que robots defectuosos y peligrosos escapen.
+
+   Repito, este es un bot policial.
+   Tengo la misma autoridad que un policía humano, abra la puerta.
+
+   Seguridad - Acceso denegado.
+   Hay robots con apariencia humana y otros modificados para que se hagan pasar por policías. 
+   Por ejemplo, estas instalaciones poseen herramientas capaces de crear apariencias humanas para los robots en ellas, 
+   por lo tanto, solo permitiré pasar a alguien que demuestre ser humano.
+
+   Parece ser que esta IA está muy metida en las ordenes de su responsable.
+   Intente convencerla de que es humano.
+   <<set $abrirPuerta to false>>
+<<endif>>
+
+===
+title: BotPolicial.TestCompletado
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Bot Policial - Lo ha conseguido!
+Vayamos a ver que ha ocurrido al fin.
+Espero que no haya más contratiempos.
+
+===

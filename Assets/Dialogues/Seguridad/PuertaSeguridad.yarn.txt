@@ -1,0 +1,79 @@
+title: PuertaSeguridad.Start
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if visited("PuertaSeguridad.Start") is false>>
+   ¿Usted es el supuesto humano, no?
+   Su bot afirma que sois policías, por lo tanto, he pensado que esta sería una buena forma de demostrarme ambas cosas a la vez:
+   Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
+
+   A: "Uno de nosotros cinco miente."
+   B: "Dos de nosotros cinco mienten."
+   C: "Conozco a estos tíos y sé que tres están mintiendo."
+   D: "No escuches ni una palabra de los que dicen. De nosotros cinco, cuatro mienten."
+   E: "¡Los cinco somos unos mentirosos!"
+
+   Si la policía solo quiere dejar libres a los sospechosos que dicen la verdad, ¿a cuántos tienen que liberar?
+
+   [[Liberar a 1|PuertaSeguridad.Correcto]]
+   [[Liberar a 2|PuertaSeguridad.Incorrecto]]
+   [[Liberar a 3|PuertaSeguridad.Incorrecto]]
+   [[Liberar a 4|PuertaSeguridad.Incorrecto]]
+  [[Liberar a todos|PuertaSeguridad.Incorrecto]]
+
+<<else>>
+¿Sera este individuo un humano esta vez?
+
+
+Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
+
+   A: "Uno de nosotros cinco miente."
+   B: "Dos de nosotros cinco mienten."
+   C: "Conozco a estos tíos y sé que tres están mintiendo."
+   D: "No escuches ni una palabra de los que dicen. De nosotros cinco, cuatro mienten."
+   E: "¡Los cinco somos unos mentirosos!"
+
+   Si la policía solo quiere dejar libres a los sospechosos que dicen la verdad, ¿a cuántos tienen que liberar?
+
+   [[Liberar a 1|PuertaSeguridad.Correcto]]
+   [[Liberar a 2|PuertaSeguridad.Incorrecto]]
+   [[Liberar a 3|PuertaSeguridad.Incorrecto]]
+   [[Liberar a 4|PuertaSeguridad.Incorrecto]]
+   [[Liberar a todos|PuertaSeguridad.Incorrecto]]
+<<endif>>
+
+
+
+
+===
+title: PuertaSeguridad.Correccto
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Respuesta correcta.
+Sin embargo, solo una prueba no sería muy seguro así que os someteré a un test más.
+[[<Continuar con los test>|PuertaSeguridad.SegundoTest]]
+<<set $primeraRespuestaCorrecta to true>>
+===
+title: PuertaSeguridad.Incorrecto
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Respuesta incorrecta.
+Como suponía, no eres humano.
+Vuestra entrada al recinto sigue denegada.
+===
+title: PuertaSeguridad.SegundoTest
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<set $segundaRespuestaCorrecta to true>>
+===
