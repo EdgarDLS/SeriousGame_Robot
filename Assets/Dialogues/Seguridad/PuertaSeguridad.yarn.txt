@@ -21,7 +21,7 @@ parent:
    [[Liberar a 2|PuertaSeguridad.Incorrecto]]
    [[Liberar a 3|PuertaSeguridad.Incorrecto]]
    [[Liberar a 4|PuertaSeguridad.Incorrecto]]
-  [[Liberar a todos|PuertaSeguridad.Incorrecto]]
+   [[Liberar a todos|PuertaSeguridad.Incorrecto]]
 
 <<else>>
 ¿Sera este individuo un humano esta vez?
