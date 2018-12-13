@@ -8,23 +8,25 @@ public class Interactuable : MonoBehaviour, IInteractuable
 
     // Components
     Animator myAnim;
+    GameObject player;
 
-    void Start()
+    protected virtual void Start()
     {
         myAnim = this.GetComponentInChildren<Animator>();
+        player = GameObject.Find("Player");
     }
 
-    public void Deinteract()
+    public virtual void Deinteract()
     {
         myAnim.Play("HideIcon");
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
-        throw new System.NotImplementedException();
+        
     }
 
-    public void ShowIcon()
+    public virtual void ShowIcon()
     {
         myAnim.Play("ShowIcon");
     }
