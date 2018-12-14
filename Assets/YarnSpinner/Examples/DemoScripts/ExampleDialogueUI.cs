@@ -63,12 +63,17 @@ namespace Yarn.Unity.Example {
         [Tooltip("How quickly to show the text, in seconds per character")]
         public float textSpeed = 0.025f;
 
+        //RawImage for the buttons
+        public GameObject buttonsContainer;
         /// The buttons that let the user choose an option
         public List<Button> optionButtons;
 
         /// Make it possible to temporarily disable the controls when
         /// dialogue is active and to restore them when dialogue ends
         public RectTransform gameControlsContainer;
+
+        [Space]
+        public Color[] textColors;
 
         void Awake ()
         {
@@ -77,6 +82,9 @@ namespace Yarn.Unity.Example {
                 dialogueContainer.SetActive(false);
 
             lineText.gameObject.SetActive (false);
+
+            // Buttons container
+            buttonsContainer.SetActive(false);
 
             foreach (var button in optionButtons) {
                 button.gameObject.SetActive (false);
@@ -93,6 +101,39 @@ namespace Yarn.Unity.Example {
             // Show the text
             lineText.gameObject.SetActive (true);
 
+            // Check for color
+            int charPosition = 0;
+
+            foreach (char c in line.text) 
+            {
+                if (c.Equals('<'))
+                {
+                    
+                    char colorValue = line.text[charPosition + 1];
+
+                    switch(colorValue)
+                    {
+                        case 'R':
+                            lineText.color = textColors[0];
+                            break;
+                        case 'B':
+                            lineText.color = textColors[1];
+                            break;
+                        case 'Y':
+                            lineText.color = textColors[2];
+                            break;
+                        default:
+                            lineText.color = Color.white;
+                            break;
+                    }
+
+                    line.text = line.text.Remove(0, 3);
+                }
+
+                charPosition++;
+            }
+
+            // Display
             if (textSpeed > 0.0f) {
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder ();
@@ -135,6 +176,11 @@ namespace Yarn.Unity.Example {
             }
 
             // Display each option in a button, and make it visible
+            /*
+            Set active the new bottom canvas for the buttons
+            */
+            buttonsContainer.SetActive(true);
+
             int i = 0;
             foreach (var optionString in optionsCollection.options) {
                 optionButtons [i].gameObject.SetActive (true);
@@ -154,6 +200,17 @@ namespace Yarn.Unity.Example {
             foreach (var button in optionButtons) {
                 button.gameObject.SetActive (false);
             }
+
+            /*
+                Hide the new bottom canvas for the buttons
+             */
+             buttonsContainer.SetActive(false);
+        }
+
+        // Called to put the text color in a different color
+        public void SetTextColor()
+        {
+
         }
 
         /// Called by buttons to make a selection.

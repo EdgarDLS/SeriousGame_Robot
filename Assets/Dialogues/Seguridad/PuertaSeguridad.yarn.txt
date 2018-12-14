@@ -17,17 +17,13 @@ parent:
 
    Si la policía solo quiere dejar libres a los sospechosos que dicen la verdad, ¿a cuántos tienen que liberar?
 
-   [[Liberar a 1|PuertaSeguridad.Correcto]]
-   [[Liberar a 2|PuertaSeguridad.Incorrecto]]
-   [[Liberar a 3|PuertaSeguridad.Incorrecto]]
-   [[Liberar a 4|PuertaSeguridad.Incorrecto]]
-   [[Liberar a todos|PuertaSeguridad.Incorrecto]]
+   <<startfirsttest HallComputer>>
 
 <<else>>
-¿Sera este individuo un humano esta vez?
+   ¿Has vuelto esta vez con un humano?
 
 
-Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
+   Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
 
    A: "Uno de nosotros cinco miente."
    B: "Dos de nosotros cinco mienten."
@@ -37,18 +33,14 @@ Cinco sospechosos de un delito son interrogados y estas son sus respectivas decl
 
    Si la policía solo quiere dejar libres a los sospechosos que dicen la verdad, ¿a cuántos tienen que liberar?
 
-   [[Liberar a 1|PuertaSeguridad.Correcto]]
-   [[Liberar a 2|PuertaSeguridad.Incorrecto]]
-   [[Liberar a 3|PuertaSeguridad.Incorrecto]]
-   [[Liberar a 4|PuertaSeguridad.Incorrecto]]
-   [[Liberar a todos|PuertaSeguridad.Incorrecto]]
+   <<startfirsttest HallComputer>>
 <<endif>>
 
 
 
 
 ===
-title: PuertaSeguridad.Correccto
+title: PuertaSeguridad.CorrecctoUno
 tags: 
 colorID: 0
 position: 0,0
@@ -68,6 +60,7 @@ parent:
 Respuesta incorrecta.
 Como suponía, no eres humano.
 Vuestra entrada al recinto sigue denegada.
+<<stopinteract HallComputer>>
 ===
 title: PuertaSeguridad.SegundoTest
 tags: 

@@ -2,30 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerInteract : Interactuable
+namespace Yarn.Unity.Example 
 {
-    [SerializeField] private Transform newPosition;
-    [SerializeField] private bool interacting = false;
-
-
-    protected override void Start()
+    public class ComputerInteract : Interactuable
     {
-        base.Start();
-    }
+        [SerializeField] private Transform newPosition;         // Camera new position | To reposition the camera so the player can see the screen
+        [SerializeField] private GameObject screenCanvas;       // Canvas in charge of the screen and the puzzles
 
-    public override void Interact()
-    {
-        base.Interact();
+        // Dialogue variables
+        public ExampleVariableStorage variableStorage;
+        public Yarn.Unity.Example.NPC npcTest;
 
-        if (!interacting)
+        // Components
+        Animator screenCanvasAnimator;
+
+
+        protected override void Start()
         {
-            GameMaster.GM.SetNewCameraPosition(newPosition);
-            interacting = true;
+            base.Start();
+
+            screenCanvas = this.transform.Find("ScreenCanvas").gameObject;
+            screenCanvasAnimator = screenCanvas.GetComponent<Animator>();
         }
-        else if (interacting)
+
+        
+        public override void Interact()
         {
-            GameMaster.GM.SetOriginalCameraPosition();
-            interacting = false;
+            base.Interact();
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("PuertaSeguridad.Start");
+            GameMaster.GM.SetCamera(newPosition);
+        }
+
+        [YarnCommand("stopinteract")]
+        public void StopInteract()
+        {
+            GameMaster.GM.SetCamera(newPosition);
+        }
+
+        // Tests
+        [YarnCommand("startfirsttest")]
+        public void StartFirstTest()
+        {
+            Debug.Log("TEST");
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("PuertaSeguridad.Incorrecto");
+            //screenCanvasAnimator.Play("FirstTest");
+        }
+        
+        [YarnCommand("startsecondtest")]
+        public void StartSecondTest()
+        {
+            
+            screenCanvasAnimator.Play("SecondTest");
+        }
+
+        public void TestFailed()
+        {
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("PuertaSeguridad.Incorrecto");
+        }
+
+        public void CompleteFirstTest()
+        {
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("PuertaSeguridad.CorrectoUno");
         }
     }
 }

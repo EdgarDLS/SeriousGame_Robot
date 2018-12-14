@@ -15,7 +15,6 @@ public class TriggerUnlockScene : MonoBehaviour
         if (other.tag.Equals("Player") && !alreadyUnlocked)
         {
             variableStorage.SetValue("$abrirPuerta", new Yarn.Value(true));
-            Debug.Log(variableStorage.GetValue("abrirPuerta"));
             scanRobot.GetComponent<Animator>().Play("TryUnlockDoor");
             alreadyUnlocked = true;
             FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(npcTest.talkToNode);

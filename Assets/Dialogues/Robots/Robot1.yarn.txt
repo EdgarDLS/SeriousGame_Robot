@@ -9,7 +9,7 @@ parent:
    No eres el asesino, ¿no? Eso es un bot policial…
    Lo reconozco de mi base de datos.
    [[Soy Detective, estoy investigando el asesinato que ha ocurrido aquí. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
-   [[Aquí las preguntas las hago yo. Dime todo lo que ha    ocurrido.|Robot1.PrimeraRespuesta]]
+   [[Aquí las preguntas las hago yo. Dime todo lo que ha ocurrido.|Robot1.PrimeraRespuesta]]
    [[Silencio, aun no te he preguntado nada. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
 <<else>>
    Ya te he dicho todo lo que se.

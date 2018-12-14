@@ -7,18 +7,19 @@ public class Interactuable : MonoBehaviour, IInteractuable
     [SerializeField] private GameObject hintIcon;
 
     // Components
-    Animator myAnim;
+    Animator hintIconAnimator;
     GameObject player;
 
     protected virtual void Start()
     {
-        myAnim = this.GetComponentInChildren<Animator>();
+        hintIcon = this.transform.Find("PressSprite").gameObject;
+        hintIconAnimator = hintIcon.GetComponent<Animator>();
         player = GameObject.Find("Player");
     }
 
     public virtual void Deinteract()
     {
-        myAnim.Play("HideIcon");
+        hintIconAnimator.Play("HideIcon");
     }
 
     public virtual void Interact()
@@ -28,6 +29,6 @@ public class Interactuable : MonoBehaviour, IInteractuable
 
     public virtual void ShowIcon()
     {
-        myAnim.Play("ShowIcon");
+        hintIconAnimator.Play("ShowIcon");
     }
 }
