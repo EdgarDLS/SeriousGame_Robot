@@ -1,0 +1,117 @@
+title: PuertaOficina.Start
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if $preofficeComplete is false>>
+   <<if $preofficepuzzle is false>>
+      <R> Esta es la terminal de control de la sala de reparaciones y el punto de control para acceder a la oficina.
+      [[Si si, lo que digas. Déjame entrar.|PuertaOficina.Respuesta1]]
+      [[Puedes darme acceso??.|PuertaOficina.Respuesta2]]
+      [[Déjame adivinar… No me vas a dar acceso.|PuertaOficina.Respuesta3]]
+      [[<irse>.|PuertaOficina.Salir]]
+
+   <<elseif $preofficepuzzle is true>>
+      <R>Segun mis datos todos los humanos cometen errores...
+      <<startfirsttest PreOfficeComputer>>
+   <<endif>>
+<<else>>
+   <R>En que puedo ayudarte, humano
+   <<if $offlineRobots is true and $online is false>>
+   [[Los robots estan apagados, solicito que los enciendas.|PuertaOficina.OnlineRobot]]
+   [[Nada.|PuertaOficina.Salir]]
+   <<else>>
+   [[Nada.|PuertaOficina.Salir]]
+   <<endif>>
+<<endif>>
+===
+title: PuertaOficina.Correcto
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Respuesta correcta.
+Abriendo puerta de la oficina...
+<<set $puertaOficinaAbierta to true>>
+<<openthegate PreOfficeComputer>>
+
+<<set $preofficeComplete to true>>
+===
+title: PuertaOficina.Incorrecto
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Respuesta incorrecta.
+Solicitud rechazada.
+<<stopinteract PreOfficeComputer>>
+===
+title: PuertaOficina.AbrirPuerta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Abriendo puerta...
+<<openthegate PreOfficeComputer>>
+===
+title: PuertaOficina.OnlineRobot
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Solicitud rechazada.
+Los robots unicamente pueden ser activados desde el ordenador de la oficina.
+[[...|PuertaOficina.Salir]]
+===
+title: PuertaOficina.Respuesta1
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>No tengas tanta prisa “humano”.
+[[...|PuertaOficina.BeforeTest]]
+===
+title: PuertaOficina.Respuesta2
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Lo siento, pero debo volver a denegar esa petición.
+[[...|PuertaOficina.BeforeTest]]
+===
+title: PuertaOficina.Respuesta3
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>…A mi amo también le gustaba responder con lo que llaman “humor” ….
+Sin embargo….
+[[...|PuertaOficina.BeforeTest]]
+===
+title: PuertaOficina.BeforeTest
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Aunque hayas completado las pruebas anteriores con éxito, esta oficina es la sala con máxima seguridad de toda la instalación.
+Deberas de mostrarme que estoy tratando con un humano.
+<<set $preofficepuzzle to true>>
+<<startfirsttest PreOfficeComputer>>
+===
+title: PuertaOficina.Salir
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<stopinteract PreOfficeComputer>>
+===

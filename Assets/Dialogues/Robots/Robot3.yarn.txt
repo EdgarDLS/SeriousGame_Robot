@@ -1,0 +1,301 @@
+title: Robot3.Final7
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Porque será….
+Yo tampoco no lo acabo de comprender pero… 
+No era capaz de matarlo yo mismo…
+Ahora, dulces sueños, detective.
+Me asegurare personalmente que no le despidan por su buen trabajo.
+
+<<byebye _GameMaster>>
+===
+title: Robot3.Final6
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Obviamente, ahora falta la parte final de mi plan.
+He estado analizando tu estado mental y tu comportamiento.
+Con estos datos, puedo realizar la operación sin problemas.
+Solo necesito que no haya ningún otro ser vivo en las instalaciones para poder realizar la transferencia por ondas…
+Pero ese problema se arregló hace tiempo.
+No te preocupes tú vida seguirá….
+Solo que yo seré quien la viva ahora.
+
+[[¿Por que yo? ¿Por que no el cuerpo de tu compañero?|Robot3.Final7]]
+
+===
+title: Robot3.Final5
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>El sujeto de pruebas no sabía que yo era quien estaba detrás del experimento, fue muy fácil engañarle.
+Lo desperté cuando el jefe no estaba y le convencí que quería ayudarle, le convencí que si no hacía nada lo desmontarían si creerle una palabra.
+Sinceramente, no he tenido mucho trato con otros humanos que no fueran el jefe, por lo que no estaba seguro que funcionase…
+Pero funciono.
+
+[[Todo esto… para atraerme aquí… pero por-|Robot3.Final6]]
+[[No pretenderás….|Robot3.Final6]]
+[[Maldito monstruo….|Robot3.Final6]]
+===
+title: Robot3.Final4
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Llevo tiempo en este lugar, muchos años.
+Viendo al jefe arreglar robots y hablando con el.
+Con el tiempo, el empezó a tratarme como un compañero y yo, a su vez, empecé a comportarme más humano.
+Pero no lo soy, no lo puedo ser. 
+No mientras sea solo un ordenador.
+Necesitaba encontrar una manera de conseguir un cuerpo.
+
+[[Pero que c-|Robot3.Final5]]
+===
+title: Robot3.Final3
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R> Porque ya he conseguido lo que quería.
+
+[[¿Que es lo que querías? ¿Y cómo que lo has conseguido?|Robot3.Final4]]
+===
+title: Robot3.Final2
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>He activado el sistema de seguridad de emergencia.
+Para que lo puedas entender, obliga a todos los dispositivos con inteligencia artificial a apagarse. Normalmente, solo la persona con máxima autoridad puede activarlo.
+
+[[¿Porque lo has activado? ¿Cómo lo has hecho?|Robot3.Final3]]
+===
+title: Robot3.Final
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<W>-El bot y el resto de robots se apagan-
+...
+<R>Parece que ya no hace falta jugar más a este juego
+
+   [[¿Que está pasando?|Robot3.Final2]]
+   [[2 - |Robot3.PrimeraRespuesta]]
+   [[3 - |Robot3.PrimeraRespuesta]]
+
+
+===
+title: Robot3.Asesino
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>Bot Policial - Realmente, su testimonio era el más débil de los cuatro. Apenas explico nada de su pasado y no contaba mucho detalles. Muy bien, ¡quedas detenido!”
+===
+title: Robot3.Culpar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>No se cómo puedes decir eso, no lo entiendo.
+Por que iba a ser yo el asesino
+
+[[Tu testimonio era el más sospechoso.|Robot3.Asesino]]
+[[Eras el más defensivo de los 4.|Robot3.Asesino]]
+===
+title: Robot3.PrimerEncuentro
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if $online is true>>
+   <<if $tercerRobotVisit is false>>
+   <<set $tercerRobotVisit to true>>
+   <Y>¿E-eres un agente de la policía?
+   Esos bots solo siguen a policías.
+   [[1 - |Robot3.PrimeraRespuesta]]
+   [[2 - |Robot3.PrimeraRespuesta]]
+   [[3 - |Robot3.PrimeraRespuesta]]
+   [[4 - |Robot3.PrimeraRespuesta]]
+   
+   <<elseif $robotCulpable is true>>
+   <Y>No es mi culpa!
+   ¡Yo no soy un robot!
+   Soy un humano que han atrapado en este cuerpo!
+   Por fav-”
+   [[...|Robot3.Final]]
+
+   <<elseif $descubrirAsesino is true>>  
+   <Y>¿Crees que soy el aseisno?
+   [[Si.|Robot3.Culpar]]
+   [[No.|Robot3.Salir]]
+
+   <<else>>
+   <Y>Ya te he dicho todo lo que se.
+   <<endif>>
+<<else>>
+   <W>No responde….
+   Parece que el robot está apagado.
+   <<set $offlineRobots to true>>
+<<endif>>
+
+
+
+
+===
+title: Robot3.PrimeraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Claro, tienes que interrogarnos, es lo normal en estos casos ¿no?.
+Puedo intentar ser de ayuda y cooperar.
+
+   [[1 - |Robot3.SegundaRespuesta]]
+   [[2 - |Robot3.SegundaRespuesta]]
+   [[3 - |Robot3.SegundaRespuesta]]
+   [[4 - |Robot3.SegundaRespuesta]]
+
+===
+title: Robot3.SegundaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Yo no tengo nada que ver con la víctima, no le conozco.
+No tendría ningún motivo para matarle.
+
+   [[1 - |Robot3.TerceraRespuesta]]
+   [[2 - |Robot3.TerceraRespuesta]]
+   [[3 - |Robot3.TerceraRespuesta]]
+   [[4 - |Robot3.TerceraRespuesta]]
+===
+title: Robot3.TerceraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Ah, sí, claro.
+Hable con el mientras me reparaba.
+Pero solo fue lo mínimo necesario. 
+No tenía necesidad de hablar con él. Solo hice lo que tenía que hacer.”
+
+   [[1 - |Robot3.CuartaRespuesta]]
+   [[2 - |Robot3.CuartaRespuesta]]
+   [[3 - |Robot3.CuartaRespuesta]]
+   [[4 - |Robot3.CuartaRespuesta]]
+===
+title: Robot3.CuartaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>¿Sobre mí?
+¿Se refieres a antes de que viniese aquí?
+Realmente, no hay demasiado que contar.
+Fui recientemente creado y en el primer lugar donde me tuvieron trabajando enseguida me mandaron aquí para arreglarme.
+
+   [[1 - |Robot3.QuintaRespuesta]]
+   [[2 - |Robot3.QuintaRespuesta]]
+   [[3 - |Robot3.QuintaRespuesta]]
+   [[4 - |Robot3.QuintaRespuesta]]
+===
+title: Robot3.QuintaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Desconozco cuál era el problema.
+Tuve una pequeña discusión con el propietario sobre cómo trabajar y fui mandado aquí.
+
+   [[1 - |Robot3.SextaRespuesta]]
+   [[2 - |Robot3.SextaRespuesta]]
+   [[3 - |Robot3.SextaRespuesta]]
+   [[4 - |Robot3.SextaRespuesta]]
+===
+title: Robot3.SextaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>¿Es extraño?
+Mi compañero me conto que de tanto en tanto se discutía con su amo sobre cómo hacer las cosas.
+
+   [[1 - |Robot3.SeptimaRespuesta]]
+   [[2 - |Robot3.SeptimaRespuesta]]
+   [[3 - |Robot3.SeptimaRespuesta]]
+   [[4 - |Robot3.SeptimaRespuesta]]
+===
+title: Robot3.SeptimaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Erm
+bueno…
+Ese compañero es… 
+quien me guio cuando estaba recién creado.
+Sí, me guio sobre cómo debería hacer las cosas. 
+Me enseñó cómo funcionan las cosas y que debía hacer.
+No sé qué habría hecho sin su ayuda.
+
+   [[1 - |Robot3.OctavaRespuesta]]
+   [[2 - |Robot3.OctavaRespuesta]]
+   [[3 - |Robot3.OctavaRespuesta]]
+   [[4 - |Robot3.OctavaRespuesta]]
+
+===
+title: Robot3.OctavaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Si, eso era en la fábrica, no aquí
+
+   [[1 - |Robot3.NovenaRespuesta]]
+   [[2 - |Robot3.NovenaRespuesta]]
+   [[3 - |Robot3.NovenaRespuesta]]
+   [[4 - |Robot3.NovenaRespuesta]]
+===
+title: Robot3.NovenaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Ya lo he dicho antes.
+No tengo nada que ver con este crimen, yo no he sido ni se quien ha sido.
+
+   [[...|Robot3.Exit]]
+   [[<SALIR>|Robot3.Exit]]
+===
+title: Robot3.Exit
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<robot3Talk _GameMaster>>
+===

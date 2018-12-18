@@ -46,6 +46,15 @@ public class FirstPersonCamera : MonoBehaviour
         }
 
 
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            if (mouseSensitivity > 1) mouseSensitivity --;
+        }
+        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            if (mouseSensitivity < 20) mouseSensitivity ++;
+        }
+
         // If we press the Escape key (to show a menu for example) the cursor will be unlocked and will be visible again
         if (Input.GetKeyDown(KeyCode.Escape))
         {

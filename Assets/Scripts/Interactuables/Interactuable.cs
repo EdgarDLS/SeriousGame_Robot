@@ -12,7 +12,6 @@ public class Interactuable : MonoBehaviour, IInteractuable
 
     protected virtual void Start()
     {
-        hintIcon = this.transform.Find("PressSprite").gameObject;
         hintIconAnimator = hintIcon.GetComponent<Animator>();
         player = GameObject.Find("Player");
     }

@@ -1,0 +1,24 @@
+title: Victima.Start
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if visited("Victima.Start") is false>>
+   <B> Según los análisis, sufrio una fuerte contusión pectoral, rompiendo sus costillas y destrozando su corazón.
+   [[Dime cual es el arma del crimen.|Victima.Arma]]
+   [[Has podido analizar el arma del crimen?.|Victima.Arma]]
+   [[No puedes contarme algo mas util?.|Victima.Arma]]
+<<else>>
+   <B>Debe de haber algo que nos vincule con la victima.
+<<endif>>
+===
+title: Victima.Arma
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>Lo siento companiero.
+No he encontrado ningun arma que pueda ser vinculada a la victima.
+===

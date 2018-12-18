@@ -1,0 +1,158 @@
+title: Robot4.Asesino
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>Bot Policial - Bueno, si tú crees que su motivo tiene sentido.
+No he encontrado ninguna prueba directa que relacione ninguno de ellos con el crimen.
+===
+title: Robot4.Culpar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Por que querría hacer algo así.
+Yo quiero detener criminales.
+
+[[Tu testimonio era el más sospechoso.|Robot4.Asesino]]
+[[Porque yo lo digo.|Robot4.Asesino]]
+===
+title: Robot4.PrimerEncuentro
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<if $online is true>>
+   <<if $cuartoRobotVisit is false>>
+      <<set $cuartoRobotVisit to true>>
+      <Y>Es usted el criminal? Por favor, entréguese a la policía voluntariamente o me veré forzado a
+ retenerle mientras llamo a la policía.
+      [[1 - |Robot4.PrimeraRespuesta]]
+      [[2 - |Robot4.PrimeraRespuesta]]
+      [[3 - |Robot4.PrimeraRespuesta]]
+   
+   <<elseif $descubrirAsesino is true>>  
+   <Y>¿Crees que soy el aseisno?
+   [[Si.|Robot4.Culpar]]
+   [[No.|Robot4.Salir]]
+
+   <<else>>
+   <Y>Ya te he dicho todo lo que se.
+   <<endif>>
+<<else>>
+   <W>No responde….
+   Parece que el robot está apagado.
+   <<set $offlineRobots to true>>
+<<endif>>
+
+===
+title: Robot4.PrimeraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Bueno…
+Eso explicaría la presencia del bot policial…
+¿Seguro que no es usted el criminal?
+
+   [[¿Seguro que no estas tú cortocircuitado? - |Robot4.SegundaRespuesta]]
+   [[2 - |Robot4.SegundaRespuesta]]
+   [[3 - |Robot4.SegundaRespuesta]]
+===
+title: Robot4.SegundaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Disculpe, solo pensé que tal vez por fin podría ser un héroe.
+
+   [[1 - |Robot4.TerceraRespuesta]]
+   [[2 - |Robot4.TerceraRespuesta]]
+   [[3 - |Robot4.TerceraRespuesta]]
+===
+title: Robot4.TerceraRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Si, bueno…
+Creo que es el motivo por el que estoy aquí.
+De tanto en tanto, se oyen noticias de cómo humanos salvan a víctimas o detienen a criminales y eso me hace pensar que, tal vez, si consigo hacer algo parecido podre…
+No se…
+cumplir mi función.
+
+   [[1 - |Robot4.CuartaRespuesta]]
+   [[2 - |Robot4.CuartaRespuesta]]
+   [[3 - |Robot4.CuartaRespuesta]]
+===
+title: Robot4.CuartaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Por supuesto. 
+Fui mandado aquí de mi trabajo para ser reparado.
+Estaba “desconectado” mientras ocurrió el crimen, no pude escuchar ni ver nada.
+No puedo testificar nada en especial.
+
+   [[1 - |Robot4.QuintaRespuesta]]
+   [[2 - |Robot4.QuintaRespuesta]]
+   [[3 - |Robot4.QuintaRespuesta]]
+===
+title: Robot4.QuintaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Pues… Yo me encargaba de transportar mudanzas.
+Siempre iba de un lado para otro en coche y tratando con nuevos humanos que querían mover cosas. 
+Era un trabajo simple y repetitivo.
+Poco a poco empecé a investigar mis alrededores, buscando algo más que hacer.
+Pero no estoy programado para hacer tareas fuera de lo ordenado, a no ser que sea para ayudar a mantener la legalidad.
+Cada día investigaba con más “interés” mis alrededores, esperando a que un crimen ocurriese.
+Hasta que mi propietario se percató y me pregunto sobre ello.
+Y así acabe aquí.
+
+   [[1 - |Robot4.SextaRespuesta]]
+   [[2 - |Robot4.SextaRespuesta]]
+   [[3 - |Robot4.SextaRespuesta]]
+===
+title: Robot4.SextaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>Por desgracia, jamás presencie un crimen, da igual cuanto esperase.
+
+   [[1 - |Robot4.SeptimaRespuesta]]
+   [[2 - |Robot4.SeptimaRespuesta]]
+   [[3 - |Robot4.SeptimaRespuesta]]
+===
+title: Robot4.SeptimaRespuesta
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Lo siento, espero que te haya servido de ayuda. No tengo más información que proporcionar.
+
+   [[Eso es todo por ahora|Robot4.Exit]]
+   [[<SALIR>|Robot4.Exit]]
+===
+title: Robot4.Exit
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<robot4Talk _GameMaster>>
+===

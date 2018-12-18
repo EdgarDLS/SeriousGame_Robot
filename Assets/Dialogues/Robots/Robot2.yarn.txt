@@ -1,17 +1,50 @@
+title: Robot2.Asesino
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>Bot Policial - Bueno, si tú crees que su motivo tiene sentido.
+No he encontrado ninguna prueba directa que relacione ninguno de ellos con el crimen.
+===
+title: Robot2.Culpar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>¿Y porque que crees que yo pude haber cometido el crimen?
+
+[[Querías vivir uno de tus casos.|Robot2.Asesino]]
+[[Porque yo lo digo.|Robot2.Asesino]]
+===
 title: Robot2.PrimerEncuentro
 tags: 
 colorID: 0
 position: 0,0
 parent: 
 ---
-<<if visited("Robot2.PrimerEncuentro") is false>>
-   Jamás pensé que me vería envuelto en un asesinato…
+<<if $online is true>>
+   <<if $segundoRobotVisit is false>>
+   <<set $segundoRobotVisit to true>>
+   <Y>Jamás pensé que me vería envuelto en un asesinato…
    ¡Es como en uno de los escenarios de ese popular personaje ficticio de hace bastante más de un siglo!
-   [[Silencio.|Robot2.PrimeraRespuestao]]
+   [[Silencio.|Robot2.PrimeraRespuesta]]
    [[Callate.|Robot2.PrimeraRespuesta]]
    [[Por favor, mantenga la seriedad.|Robot2.PrimeraRespuesta]]
+
+   <<elseif $descubrirAsesino is true>>  
+   <Y>¿Crees que soy el aseisno?
+   [[Si.|Robot2.Culpar]]
+   [[No.|Robot2.Salir]]
+
+   <<else>>
+   <Y>Ya te he dicho todo lo que se.
+   <<endif>>
 <<else>>
-   Meow meow meow.
+   <W>No responde….
+   Parece que el robot está apagado.
+   <<set $offlineRobots to true>>
 <<endif>>
 
 
@@ -22,7 +55,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Ah! 
+<Y>Ah! 
 Claro
 por supuesto. 
 Interrogar a los “sospechosos”
@@ -38,7 +71,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-No, yo no fui quien asesino a la víctima. 
+<Y>No, yo no fui quien asesino a la víctima. 
 Tan solo me trajeron aquí para ser reparado, asique cuando me “trató” simplemente seguí sus instrucciones.
 [[1.|Robot2.TerceraRespuesta]]
 [[2.|Robot2.TerceraRespuesta]]
@@ -50,7 +83,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-¿Quieres saber mi perfil? 
+<Y>¿Quieres saber mi perfil? 
 Claro
 un asesino jamás admitiría serlo…
 o el caso no sería interesante…
@@ -64,7 +97,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Discúlpeme señor detective.
+<Y>Discúlpeme señor detective.
 Me dieron varias historias detectivescas tanto para probar como para desarrollar mi capacidad de observación para el trabajo que querían otorgarme.
 Sin embargo, después de tantos problemas lógicos, soluciones inusuales, los giros totales por una pista sorpresa…
 Acabe cogiéndole “gusto”, como suelen decir los humanos.
@@ -78,7 +111,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Ah, por supuesto.
+<Y>Ah, por supuesto.
 Como iba diciendo, yo trabajo como asistente de hospital.
 Es decir, ayudo tanto a los pacientes con problemas psicológicos
 de allí que necesite buenas capacidades de observación
@@ -94,7 +127,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Como os veo? 
+<Y>Como os veo? 
 Bueno
 eso es una pregunta extraña. 
 Los humanos sois nuestros creadores y una paradoja lógica.
@@ -111,7 +144,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Bueno
+<Y>Bueno
 si me permite un par de observaciones…
 [[1.|Robot2.OctavaRespuesta]]
 [[2.|Robot2.OctavaRespuesta]]
@@ -123,7 +156,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Viendo cómo se encuentra la víctima,
+<Y>Viendo cómo se encuentra la víctima,
 sin rastro de forcejeo,
 debió de recibir un ataque sorpresa o una muerte inmediata.
 En cualquier caso,
@@ -141,7 +174,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Lo que insinuó, es que dejando de lado la supuesta defectuosidad.
+<Y>Lo que insinuó, es que dejando de lado la supuesta defectuosidad.
 Podría ser que el asesino solo fuese un peón.
 Que algún tipo de virus comiera su comportamiento para asaltar a la víctima y crear un caso de habitación cerrada.
 [[1.|Robot2.Exit]]
@@ -154,5 +187,5 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-
+<<robot2Talk _GameMaster>>
 ===

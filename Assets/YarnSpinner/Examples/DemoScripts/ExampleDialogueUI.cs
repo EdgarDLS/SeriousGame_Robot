@@ -239,6 +239,8 @@ namespace Yarn.Unity.Example {
         {
             Debug.Log ("Dialogue starting!");
 
+            GameMaster.GM.SilencePlease(true);
+
             // Enable the dialogue controls.
             if (dialogueContainer != null)
                 dialogueContainer.SetActive(true);
@@ -255,6 +257,8 @@ namespace Yarn.Unity.Example {
         public override IEnumerator DialogueComplete ()
         {
             Debug.Log ("Complete!");
+
+            GameMaster.GM.SilencePlease(false);
 
             // Hide the dialogue interface.
             if (dialogueContainer != null)

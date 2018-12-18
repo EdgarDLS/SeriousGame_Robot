@@ -1,0 +1,73 @@
+title: SeguridadAsesina.Cierto
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>BotPol- ¡Oh, claro!
+El robot hacía referencia a que alguien le ayudaba y guiaba, pero un robot recién fabricado no necesita esas cosas, lo tienen ya programado en la memoria.
+Deduje que era que habían cambiado el método de creación de robots, ¡pero parece ser que estaba mintiendo! 
+…
+Un momento…
+Un robot no puede mentir.
+
+<<set $robotCulpable to true>>
+
+[[Esto es un centro de reparaciones.|SeguridadAsesina.Exit]]
+===
+title: SeguridadAsesina.Acertar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Porque crees que ese robot haría algo así por mí.
+
+[[Porque le estabas ayudando.|SeguridadAsesina.Cierto]]
+===
+title: SeguridadAsesina.Fallo
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>¿Realmente puedes creerte eso?
+No tienen ningún motivo para seguir una orden mía como esa.
+Es simplemente imposible.
+Si no sabes quien ha sido, por favor, llame a alguien más competente.
+<<stopinteract HallComputer>>
+===
+title: SeguridadAsesina.Culpar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>¿Y cómo se supone que cometí el crimen?
+No tengo un cuerpo propio para hacerlo.
+
+[[Utilizaste al robot 1.|SeguridadAsesina.Fallo]]
+[[Utilizaste al robot 2.|SeguridadAsesina.Fallo]]
+[[Utilizaste al robot 3.|SeguridadAsesina.Acertar]]
+[[Utilizaste al robot 4.|SeguridadAsesina.Fallo]]
+===
+title: SeguridadAsesina.Start
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>…Disculpame
+¿Que motivos tienes para hablar conmigo?
+
+[[Eres el verdadero culpable.|SeguridadAsesina.Culpar]]
+[[Nada.|SeguridadAsesina.Exit]]
+===
+title: SeguridadAsesina.Exit
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<<stopinteract HallComputer>>
+===

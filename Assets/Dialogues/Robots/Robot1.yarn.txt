@@ -1,18 +1,52 @@
+title: Robot1.Asesino
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B>Bot Policial - Bueno, si tú crees que su motivo tiene sentido.
+No he encontrado ninguna prueba directa que relacione ninguno de ellos con el crimen.
+===
+title: Robot1.Culpar
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<Y>¿Porque crees que he sido yo?
+NO veo tu lógica
+
+[[Eres el que tiene más motivo de todos.|Robot1.Asesino]]
+[[Porque yo lo digo.|Robot1.Asesino]]
+===
 title: Robot1.PrimerEncuentro
 tags: 
 colorID: 0
 position: 0,0
 parent: 
 ---
-<<if visited("Robot1.PrimerEncuentro") is false>>
-   Tu...
+<<if $online is true>>
+   <<if $primerRobotVisit is false>>
+   <<set $primerRobotVisit to true>>
+   <Y>Tu...
    No eres el asesino, ¿no? Eso es un bot policial…
    Lo reconozco de mi base de datos.
    [[Soy Detective, estoy investigando el asesinato que ha ocurrido aquí. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
    [[Aquí las preguntas las hago yo. Dime todo lo que ha ocurrido.|Robot1.PrimeraRespuesta]]
    [[Silencio, aun no te he preguntado nada. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
+
+   <<elseif $descubrirAsesino is true>>  
+   <Y>¿Crees que soy el aseisno?
+   [[Si.|Robot1.Culpar]]
+   [[No.|Robot1.Salir]]
+
+   <<else>>
+   <Y>Ya te he dicho todo lo que se.
+   <<endif>>
 <<else>>
-   Ya te he dicho todo lo que se.
+   <W>No responde….
+   Parece que el robot está apagado.
+   <<set $offlineRobots to true>>
 <<endif>>
 
 
@@ -25,7 +59,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Así que…
+<Y>Así que…
 realmente…
 De acuerdo, según mis protocolos debo seguir las instrucciones del humano con mayor autoridad de la zona. Como le puedo ayudar.
 [[1|Robot1.SegundaRespuesta]]
@@ -39,7 +73,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Por desgracia para usted, yo no soy el asesino y no se quien ha sido.
+<Y>Por desgracia para usted, yo no soy el asesino y no se quien ha sido.
 Estaba “apagado” mientras el incidente transcurría.
 [[1|Robot1.TerceraRespuesta]]
 [[2|Robot1.TerceraRespuesta]]
@@ -51,7 +85,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Sobre mí?
+<Y>Sobre mí?
 Soy un robot del modelo AR/4300 y mis funcionalidades son-
 [[1|Robot1.CuartaRespuesta]]
 [[2|Robot1.CuartaRespuesta]]
@@ -63,7 +97,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Entendido. 
+<Y>Entendido. 
 Mi amo es propietario de un pequeño negocio.
 Yo me encargo de cargar, descargar, mover, transportar, ordenar, limpiar y recoger el negocio entre otras muchas cosas. 
 Por la noche, cuando no necesito recargarme tengo que ir a trabajar a trabajos pesados para conseguir dinero extra para mi propietario.
@@ -77,7 +111,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Si, me dan el mínimo tiempo necesario de recuperación. 
+<Y>Si, me dan el mínimo tiempo necesario de recuperación. 
 Mi “amo” quiere aprovechar al máximo su compra.
 [[1|Robot1.SextaRespuesta]]
 [[2|Robot1.SextaRespuesta]]
@@ -89,7 +123,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-De los humanos? 
+<Y>De los humanos? 
 Lo único que juzgo son las variables que afectan a mis obligaciones…. 
 Pero si tuviera que categorizar a un humano como variable…. 
 Los humanos consiguen mejor rendimiento cuando creen que son lo más importante. 
@@ -105,7 +139,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Si, vine aquí para ser reparado y, por lo tanto, traté con la víctima.
+<Y>Si, vine aquí para ser reparado y, por lo tanto, traté con la víctima.
 Cuando él me reparaba seguí todas sus instrucciones y al finalizar me "desconecto"
 [[1|Robot1.OctavaRespuesta]]
 [[2|Robot1.OctavaRespuesta]]
@@ -116,7 +150,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Lo siento, pero eso es todo lo que ocurrió. 
+<Y>Lo siento, pero eso es todo lo que ocurrió. 
 Realmente no pasó nada más.
 [[De acuerdo. Gracias por tu colaboración.|Robot1.Exit]]
 [[<Irse sin decir nada>|Robot1.Exit]]
@@ -128,5 +162,5 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-
+<<robot1Talk _GameMaster>>
 ===

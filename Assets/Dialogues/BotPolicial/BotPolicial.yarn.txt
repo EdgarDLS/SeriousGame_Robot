@@ -11,7 +11,7 @@ parent:
    Tu misión encomendada es averiguar el motivo de la señal y resolver el problema.
    Yo aportare toda la tecnología y apoyo que necesites, siempre y cuando no se trate de levantar objetos.
 
-<<elseif $abrirPuerta is true>>
+<<elseif $abrirPuerta is true and $segundaRespuestaCorrecta is false>>
    Espere un segundo mientras abro la puerta, inspector.
    Conectando IA Seguridad, Dron policial D11452 exige el acceso a esta instalación.
    Aplicando el uso de la ley G15 de auxilio y investigación...
@@ -33,17 +33,89 @@ parent:
    <B>Parece ser que esta IA está muy metida en las ordenes de su responsable.
    Intente convencerla de que es humano.
    <<set $abrirPuerta to false>>
+
+<<elseif $segundaRespuestaCorrecta is true and $scanning is true and $identificada is false>>
+   <B> Victima identificada.
+   94% de probabilidades de que se trate de la persona que está a cargo de esta instalacion de reparaciones.
+   Voy a comenzar con una rápida autopsia.
+   Mientras, debería
+ investigar la escena del crimen, a ver si encuentra algo que pueda esclarecer que ocurrió aquí.
+   Seguramente habrá algo en su oficina que explique que hacia la víctima.
+   <<set $identificada to true>>
+
+<<elseif $identificada is true and $online is false>>
+   <B>Investigador, tal vez debería investigar la escena del crimen
+   a ver si encuentra algo que pueda esclarecer que ocurrió aquí.
+   Seguramente habrá algo en su oficina que explique que hacia la víctima.
+
+<<elseif $allRobotsChat is true and $descubrirAsesino is false>>
+   <<set $onlineTalk to true>>
+   <B>Parece que ha hablado con todos los testigos.
+   ¿Ha descubierto quien es el criminal?
+
+   [[Creo que si|BotPolicial.DescubrirAsesino]]
+   [[Aun no|BotPolicial.Salir]]
+
+<<elseif $online is true and $onlineTalk is false>>
+   <<set $onlineTalk to true>>
+   <B>Parece que has conseguido activar los robots. Bien hecho. Ahora podremos preguntarles si saben algo sobre el crimen.
+   [[En ello|BotPolicial.Salir]]
+   [[Gracias, capitan obvio|BotPolicial.Salir]]
+   [[Avísame si descubres algo de la escena.|BotPolicial.Recibido]]
+   [[Basta de cháchara, ¿tienes algo Nuevo?|BotPolicial.RobotNada]]
+
+<<else>>
+   <B>¿Me necesita para algo, inspector?
+   [[Esta claro que no|BotPolicial.Recibido]]
+   [[Siga con su trabajo.|BotPolicial.Recibido]]
+   [[Ya te avisare si necesito algo|BotPolicial.Recibido]]
 <<endif>>
 
 ===
-title: BotPolicial.TestCompletado
+title: BotPolicial.DescubrirAsesino
 tags: 
 colorID: 0
 position: 0,0
 parent: 
 ---
-Bot Policial - Lo ha conseguido!
-Vayamos a ver que ha ocurrido al fin.
-Espero que no haya más contratiempos.
+<<set $descubrirAsesino to true>>
+¿¡Ya lo sabe!?
+¡Increíble, compañero!
+¿Quién es el culpable? ¡Captúrelo!
+<<setAI _GameMaster>>
+===
+title: BotPolicial.Recibido
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Recibido
+===
+title: BotPolicial.EntradaSala
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<B> Parece que hable antes de cuenta...
+Voy a proceder a identificar a la victima.
+<<set $scanning to true>>
+===
+title: BotPolicial.RobotNada
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Me temo que no.
+===
+title: BotPolicial.Salir
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+Write here.
 
 ===

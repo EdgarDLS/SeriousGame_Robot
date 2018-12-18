@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class TriggerUnlockScene : MonoBehaviour
 {
-    [SerializeField] private bool alreadyUnlocked = false;
+    [SerializeField] private bool alreadyTriggered = false;
     public ExampleVariableStorage variableStorage;
     public Yarn.Unity.Example.NPC npcTest;
     public GameObject scanRobot;
+    public Animator animator;
+    public string variableToStore;
+    public string animationToPlay;
+    public string startingNode;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player") && !alreadyUnlocked)
+        if (other.tag.Equals("Player") && !alreadyTriggered)
         {
-            variableStorage.SetValue("$abrirPuerta", new Yarn.Value(true));
-            scanRobot.GetComponent<Animator>().Play("TryUnlockDoor");
-            alreadyUnlocked = true;
-            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(npcTest.talkToNode);
+            if (variableToStore != null) variableStorage.SetValue("$" + variableToStore, new Yarn.Value(true));
+            if (animationToPlay != null) animator.Play(animationToPlay);
+            alreadyTriggered = true;
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(startingNode);
         }
     }
 }

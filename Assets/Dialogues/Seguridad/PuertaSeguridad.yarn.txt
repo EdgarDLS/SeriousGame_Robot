@@ -5,7 +5,7 @@ position: 0,0
 parent: 
 ---
 <<if visited("PuertaSeguridad.Start") is false>>
-   ¿Usted es el supuesto humano, no?
+   <R>¿Usted es el supuesto humano, no?
    Su bot afirma que sois policías, por lo tanto, he pensado que esta sería una buena forma de demostrarme ambas cosas a la vez:
    Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
 
@@ -19,8 +19,8 @@ parent:
 
    <<startfirsttest HallComputer>>
 
-<<else>>
-   ¿Has vuelto esta vez con un humano?
+<<elseif visited("PuertaSeguridad.Start") is true and $primeraRespuestaCorrecta is false>>
+   <R>¿Has vuelto esta vez con un humano?
 
 
    Cinco sospechosos de un delito son interrogados y estas son sus respectivas declaraciones:
@@ -34,22 +34,33 @@ parent:
    Si la policía solo quiere dejar libres a los sospechosos que dicen la verdad, ¿a cuántos tienen que liberar?
 
    <<startfirsttest HallComputer>>
+<<elseif $primeraRespuestaCorrecta is true and $segundaRespuestaCorrecta is false>>
+   <R>Me has traido un humano para resolver el segundo test?
+   <<startsecondtest HallComputer>>
+
+<<elseif $segundaRespuestaCorrecta is true and $firstdoortalk is false>>
+   <R>Te he abierto la puerta, ya puedes entrar.
+   <<set $firstdoortalk to true>>
+   <<stopinteract HallComputer>>
+<<elseif $segundaRespuestaCorrecta is true and $firstdoortalk is true>>
+   <R>La puerta esta abierta.
+   <<stopinteract HallComputer>>
 <<endif>>
 
 
 
 
 ===
-title: PuertaSeguridad.CorrecctoUno
+title: PuertaSeguridad.CorrectoUno
 tags: 
 colorID: 0
 position: 0,0
 parent: 
 ---
-Respuesta correcta.
+<R>Respuesta correcta.
 Sin embargo, solo una prueba no sería muy seguro así que os someteré a un test más.
-[[<Continuar con los test>|PuertaSeguridad.SegundoTest]]
 <<set $primeraRespuestaCorrecta to true>>
+[[<Continuar con los test>|PuertaSeguridad.SegundoTest]]
 ===
 title: PuertaSeguridad.Incorrecto
 tags: 
@@ -57,7 +68,7 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-Respuesta incorrecta.
+<R>Respuesta incorrecta.
 Como suponía, no eres humano.
 Vuestra entrada al recinto sigue denegada.
 <<stopinteract HallComputer>>
@@ -68,5 +79,22 @@ colorID: 0
 position: 0,0
 parent: 
 ---
+<<startsecondtest HallComputer>>
+===
+title: PuertaSeguridad.CorrectoDos
+tags: 
+colorID: 0
+position: 0,0
+parent: 
+---
+<R>Respuesta correcta. 
+Has demostrado ser humano….
+Les abriré la puerta al recinto principal.
+<W>...
+<B>Lo ha conseguido!
+Vayamos a ver que ha ocurrido al fin.
+Espero que no haya más contratiempos.
 <<set $segundaRespuestaCorrecta to true>>
+<<openthegate HallComputer>>
+
 ===

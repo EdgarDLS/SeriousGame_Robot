@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameMaster : MonoBehaviour
 {
     // GameMaster
@@ -30,12 +31,14 @@ public class GameMaster : MonoBehaviour
 
         else
             GM = this;
+
+        player = GameObject.Find("Player");
+        localOriginalPosition = Camera.main.transform.localPosition;
     }
 
     void Start()
     {
-        player = GameObject.Find("Player");
-        localOriginalPosition = Camera.main.transform.localPosition;
+        
     }
 
     void Update()
@@ -49,9 +52,11 @@ public class GameMaster : MonoBehaviour
     }
 
     // Function that will be called when the Dialogue system is working to avoid the player moving.
-    public void SilencePlease()
+    public void SilencePlease(bool _dialogueValue)
     {
-        dialogueTalking = !dialogueTalking;
+        if (!inPlayerHead) return;
+
+        dialogueTalking = _dialogueValue;
 
         player.GetComponent<Controller>().enabled = !dialogueTalking;
         Camera.main.GetComponent<FirstPersonCamera>().enabled = !dialogueTalking;
@@ -63,6 +68,16 @@ public class GameMaster : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         else
             Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void ByeLife()
+    {
+        player.GetComponent<Controller>().enabled = false;
+        Camera.main.GetComponent<FirstPersonCamera>().enabled = false;
+        player.GetComponent<PlayerInteraction>().enabled = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
