@@ -35,7 +35,7 @@ parent:
       [[3 - |Robot4.PrimeraRespuesta]]
    
    <<elseif $descubrirAsesino is true>>  
-   <Y>¿Crees que soy el aseisno?
+   <Y>¿Crees que soy el asesino?
    [[Si.|Robot4.Culpar]]
    [[No.|Robot4.Salir]]
 

@@ -36,7 +36,7 @@ parent:
    [[Silencio, aun no te he preguntado nada. Dime todo lo que sepas.|Robot1.PrimeraRespuesta]]
 
    <<elseif $descubrirAsesino is true>>  
-   <Y>¿Crees que soy el aseisno?
+   <Y>¿Crees que soy el asesino?
    [[Si.|Robot1.Culpar]]
    [[No.|Robot1.Salir]]
 

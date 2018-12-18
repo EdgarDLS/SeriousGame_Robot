@@ -34,7 +34,7 @@ parent:
    [[Por favor, mantenga la seriedad.|Robot2.PrimeraRespuesta]]
 
    <<elseif $descubrirAsesino is true>>  
-   <Y>¿Crees que soy el aseisno?
+   <Y>¿Crees que soy el asesino?
    [[Si.|Robot2.Culpar]]
    [[No.|Robot2.Salir]]
 

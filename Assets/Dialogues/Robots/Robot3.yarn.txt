@@ -140,7 +140,7 @@ parent:
    [[...|Robot3.Final]]
 
    <<elseif $descubrirAsesino is true>>  
-   <Y>¿Crees que soy el aseisno?
+   <Y>¿Crees que soy el asesino?
    [[Si.|Robot3.Culpar]]
    [[No.|Robot3.Salir]]
 
