@@ -14,6 +14,9 @@ public class ComputerOffice : Interactuable
 	[SerializeField] private InputField loginField;
 	[SerializeField] private InputField passwordField;
 
+	// Robots
+	[SerializeField] private GameObject[] robots;
+
 	[Space]
 
 	public ExampleVariableStorage variableStorage;
@@ -55,6 +58,8 @@ public class ComputerOffice : Interactuable
 
 		if (loginField.text.ToLower().Equals(userName.ToLower()))
 		{
+			loginField.image.color = Color.white;
+
 			if (!passwordField.text.Equals(password))
 			{
 				passwordField.image.color = wrongColor;
@@ -76,5 +81,10 @@ public class ComputerOffice : Interactuable
 	public void TurnRobotsOn()
 	{
 		variableStorage.SetValue("$" + "online", new Yarn.Value(true));
+
+		foreach(GameObject idleRobot in robots)
+		{
+			idleRobot.GetComponent<Animator>().Play("Idle");
+		}
 	}
 }

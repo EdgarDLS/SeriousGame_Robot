@@ -127,10 +127,9 @@ parent:
    <<set $tercerRobotVisit to true>>
    <Y>¿E-eres un agente de la policía?
    Esos bots solo siguen a policías.
-   [[1 - |Robot3.PrimeraRespuesta]]
-   [[2 - |Robot3.PrimeraRespuesta]]
-   [[3 - |Robot3.PrimeraRespuesta]]
-   [[4 - |Robot3.PrimeraRespuesta]]
+   [[Aquí las preguntas las hago yo. Dime todo lo que ha ocurrido.|Robot3.PrimeraRespuesta]]
+   [[Silencio, aun no te he preguntado nada. Dime todo lo que sepas.|Robot3.PrimeraRespuesta]]
+   [[Cálmate, estoy aquí para solucionar esto. ¿Puedes decirme que ha ocurrido?|Robot3.PrimeraRespuesta]]
    
    <<elseif $robotCulpable is true>>
    <Y>No es mi culpa!
@@ -166,10 +165,9 @@ parent:
 <Y>Claro, tienes que interrogarnos, es lo normal en estos casos ¿no?.
 Puedo intentar ser de ayuda y cooperar.
 
-   [[1 - |Robot3.SegundaRespuesta]]
-   [[2 - |Robot3.SegundaRespuesta]]
-   [[3 - |Robot3.SegundaRespuesta]]
-   [[4 - |Robot3.SegundaRespuesta]]
+   [[¿Has sido tu quien lo mato?|Robot3.SegundaRespuesta]]
+   [[Dime que ha pasado y quien es el culpable.|Robot3.SegundaRespuesta]]
+   [[Ya puedes empezar a hablar o te mandare al chatarrero ¿Quién es el asesino?|Robot3.SegundaRespuesta]]
 
 ===
 title: Robot3.SegundaRespuesta
@@ -181,10 +179,8 @@ parent:
 <Y>Yo no tengo nada que ver con la víctima, no le conozco.
 No tendría ningún motivo para matarle.
 
-   [[1 - |Robot3.TerceraRespuesta]]
-   [[2 - |Robot3.TerceraRespuesta]]
-   [[3 - |Robot3.TerceraRespuesta]]
-   [[4 - |Robot3.TerceraRespuesta]]
+   [[¿No interaccionaste con él en ningún momento?|Robot3.TerceraRespuesta]]
+   [[¿No lo viste en ningún momento?|Robot3.TerceraRespuesta]]
 ===
 title: Robot3.TerceraRespuesta
 tags: 
@@ -197,10 +193,9 @@ Hable con el mientras me reparaba.
 Pero solo fue lo mínimo necesario. 
 No tenía necesidad de hablar con él. Solo hice lo que tenía que hacer.”
 
-   [[1 - |Robot3.CuartaRespuesta]]
-   [[2 - |Robot3.CuartaRespuesta]]
-   [[3 - |Robot3.CuartaRespuesta]]
-   [[4 - |Robot3.CuartaRespuesta]]
+   [[Ya, claro. Dime que hacías antes de venir aquí.|Robot3.CuartaRespuesta]]
+   [[Ya veo ¿Puedes contarme sobre ti, entonces?|Robot3.CuartaRespuesta]]
+   [[Háblame sobre ti.|Robot3.CuartaRespuesta]]
 ===
 title: Robot3.CuartaRespuesta
 tags: 
@@ -213,10 +208,9 @@ parent:
 Realmente, no hay demasiado que contar.
 Fui recientemente creado y en el primer lugar donde me tuvieron trabajando enseguida me mandaron aquí para arreglarme.
 
-   [[1 - |Robot3.QuintaRespuesta]]
-   [[2 - |Robot3.QuintaRespuesta]]
-   [[3 - |Robot3.QuintaRespuesta]]
-   [[4 - |Robot3.QuintaRespuesta]]
+   [[¿Le llevaste la contraria a tu propietario?|Robot3.QuintaRespuesta]]
+   [[¿Discutías con tu dueño?|Robot3.QuintaRespuesta]]
+   [[Normal.|Robot3.QuintaRespuesta]]
 ===
 title: Robot3.QuintaRespuesta
 tags: 
@@ -227,10 +221,9 @@ parent:
 <Y>Desconozco cuál era el problema.
 Tuve una pequeña discusión con el propietario sobre cómo trabajar y fui mandado aquí.
 
-   [[1 - |Robot3.SextaRespuesta]]
-   [[2 - |Robot3.SextaRespuesta]]
-   [[3 - |Robot3.SextaRespuesta]]
-   [[4 - |Robot3.SextaRespuesta]]
+   [[No sabía que pudierais hacer eso.|Robot3.SextaRespuesta]]
+   [[Eso explica porque estas en reparaciones.|Robot3.SextaRespuesta]]
+   [[Las maquinas no deberían contradecir a sus dueños|Robot3.SextaRespuesta]]
 ===
 title: Robot3.SextaRespuesta
 tags: 
@@ -241,10 +234,9 @@ parent:
 <Y>¿Es extraño?
 Mi compañero me conto que de tanto en tanto se discutía con su amo sobre cómo hacer las cosas.
 
-   [[1 - |Robot3.SeptimaRespuesta]]
-   [[2 - |Robot3.SeptimaRespuesta]]
-   [[3 - |Robot3.SeptimaRespuesta]]
-   [[4 - |Robot3.SeptimaRespuesta]]
+   [[¿Quién es este compañero del que tanto hablas?|Robot3.SeptimaRespuesta]]
+   [[Háblame de ese “compañero”.|Robot3.SeptimaRespuesta]]
+   [[¿Quién es el amiguito del que siempre hablas?|Robot3.SeptimaRespuesta]]
 ===
 title: Robot3.SeptimaRespuesta
 tags: 
@@ -260,10 +252,9 @@ Sí, me guio sobre cómo debería hacer las cosas.
 Me enseñó cómo funcionan las cosas y que debía hacer.
 No sé qué habría hecho sin su ayuda.
 
-   [[1 - |Robot3.OctavaRespuesta]]
-   [[2 - |Robot3.OctavaRespuesta]]
-   [[3 - |Robot3.OctavaRespuesta]]
-   [[4 - |Robot3.OctavaRespuesta]]
+   [[¿Y ese compañero no está aquí?|Robot3.OctavaRespuesta]]
+   [[Entonces, ¿es un viejo conocido tuyo?|Robot3.OctavaRespuesta]]
+   [[¿Y no te has traído a tu amiguito aquí, no? ¿eso fue cuando te crearon?|Robot3.OctavaRespuesta]]
 
 ===
 title: Robot3.OctavaRespuesta
@@ -274,10 +265,9 @@ parent:
 ---
 <Y>Si, eso era en la fábrica, no aquí
 
-   [[1 - |Robot3.NovenaRespuesta]]
-   [[2 - |Robot3.NovenaRespuesta]]
-   [[3 - |Robot3.NovenaRespuesta]]
-   [[4 - |Robot3.NovenaRespuesta]]
+   [[¿Seguro que no viste nada?|Robot3.NovenaRespuesta]]
+   [[Lo repetiré por última vez. ¿Tienes alguna información relacionada con el crimen?|Robot3.NovenaRespuesta]]
+   [[Algo útil que puedas decirme?|Robot3.NovenaRespuesta]]
 ===
 title: Robot3.NovenaRespuesta
 tags: 
@@ -288,8 +278,9 @@ parent:
 Ya lo he dicho antes.
 No tengo nada que ver con este crimen, yo no he sido ni se quien ha sido.
 
-   [[...|Robot3.Exit]]
-   [[<SALIR>|Robot3.Exit]]
+   [[Vale, gracias.|Robot3.Exit]]
+   [[No tengo más preguntas.|Robot3.Exit]]
+   [[Suficiente por ahora.|Robot3.Exit]]
 ===
 title: Robot3.Exit
 tags: 

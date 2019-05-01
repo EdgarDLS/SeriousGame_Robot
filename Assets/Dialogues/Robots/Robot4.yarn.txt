@@ -30,9 +30,9 @@ parent:
       <<set $cuartoRobotVisit to true>>
       <Y>Es usted el criminal? Por favor, entréguese a la policía voluntariamente o me veré forzado a
  retenerle mientras llamo a la policía.
-      [[1 - |Robot4.PrimeraRespuesta]]
-      [[2 - |Robot4.PrimeraRespuesta]]
-      [[3 - |Robot4.PrimeraRespuesta]]
+      [[Yo soy la policía.|Robot4.PrimeraRespuesta]]
+      [[Estas equivocado.|Robot4.PrimeraRespuesta]]
+      [[¿Se te ha fundido algo? Yo soy la policia|Robot4.PrimeraRespuesta]]
    
    <<elseif $descubrirAsesino is true>>  
    <Y>¿Crees que soy el asesino?
@@ -60,8 +60,8 @@ Eso explicaría la presencia del bot policial…
 ¿Seguro que no es usted el criminal?
 
    [[¿Seguro que no estas tú cortocircuitado? - |Robot4.SegundaRespuesta]]
-   [[2 - |Robot4.SegundaRespuesta]]
-   [[3 - |Robot4.SegundaRespuesta]]
+   [[¿Porque eres tan insistente en eso?|Robot4.SegundaRespuesta]]
+   [[Como ya he dicho, soy la policía.|Robot4.SegundaRespuesta]]
 ===
 title: Robot4.SegundaRespuesta
 tags: 
@@ -71,9 +71,9 @@ parent:
 ---
 <Y>Disculpe, solo pensé que tal vez por fin podría ser un héroe.
 
-   [[1 - |Robot4.TerceraRespuesta]]
-   [[2 - |Robot4.TerceraRespuesta]]
-   [[3 - |Robot4.TerceraRespuesta]]
+   [[¿Perdón?|Robot4.TerceraRespuesta]]
+   [[Ah, así que eres “defectuoso”.|Robot4.TerceraRespuesta]]
+   [[Otra máquina rara.|Robot4.TerceraRespuesta]]
 ===
 title: Robot4.TerceraRespuesta
 tags: 
@@ -87,9 +87,8 @@ De tanto en tanto, se oyen noticias de cómo humanos salvan a víctimas o detien
 No se…
 cumplir mi función.
 
-   [[1 - |Robot4.CuartaRespuesta]]
-   [[2 - |Robot4.CuartaRespuesta]]
-   [[3 - |Robot4.CuartaRespuesta]]
+   [[Cuéntame más sobre tu cuartada.|Robot4.CuartaRespuesta]]
+   [[Habla sobre la hora del crimen|Robot4.CuartaRespuesta]]
 ===
 title: Robot4.CuartaRespuesta
 tags: 
@@ -102,9 +101,9 @@ Fui mandado aquí de mi trabajo para ser reparado.
 Estaba “desconectado” mientras ocurrió el crimen, no pude escuchar ni ver nada.
 No puedo testificar nada en especial.
 
-   [[1 - |Robot4.QuintaRespuesta]]
-   [[2 - |Robot4.QuintaRespuesta]]
-   [[3 - |Robot4.QuintaRespuesta]]
+   [[¿De qué trabajabas antes?|Robot4.QuintaRespuesta]]
+   [[Háblame sobre ti|Robot4.QuintaRespuesta]]
+   [[Nada útil. Cuéntame más sobre tu defecto.|Robot4.QuintaRespuesta]]
 ===
 title: Robot4.QuintaRespuesta
 tags: 
@@ -121,9 +120,9 @@ Cada día investigaba con más “interés” mis alrededores, esperando a que u
 Hasta que mi propietario se percató y me pregunto sobre ello.
 Y así acabe aquí.
 
-   [[1 - |Robot4.SextaRespuesta]]
-   [[2 - |Robot4.SextaRespuesta]]
-   [[3 - |Robot4.SextaRespuesta]]
+   [[¿Y alguna vez presenciaste un crimen?|Robot4.SextaRespuesta]]
+   [[¿Has conseguido algo con eso?|Robot4.SextaRespuesta]]
+   [[Ese es mi trabajo, no el tuyo. ¿No habrás ya detenido a alguien?|Robot4.SextaRespuesta]]
 ===
 title: Robot4.SextaRespuesta
 tags: 
@@ -133,9 +132,9 @@ parent:
 ---
 <Y>Por desgracia, jamás presencie un crimen, da igual cuanto esperase.
 
-   [[1 - |Robot4.SeptimaRespuesta]]
-   [[2 - |Robot4.SeptimaRespuesta]]
-   [[3 - |Robot4.SeptimaRespuesta]]
+   [[Entonces, ¿no sabes nada del crimen?|Robot4.SeptimaRespuesta]]
+   [[¿Has contado todo lo que sabias?	|Robot4.SeptimaRespuesta]]
+   [[Nada útil que me puedas contar?|Robot4.SeptimaRespuesta]]
 ===
 title: Robot4.SeptimaRespuesta
 tags: 
@@ -145,8 +144,8 @@ parent:
 ---
 Lo siento, espero que te haya servido de ayuda. No tengo más información que proporcionar.
 
-   [[Eso es todo por ahora|Robot4.Exit]]
-   [[<SALIR>|Robot4.Exit]]
+   [[Gracias, no tengo más preguntas.|Robot4.Exit]]
+   [[Voy a investigar algo útil.|Robot4.Exit]]
 ===
 title: Robot4.Exit
 tags: 

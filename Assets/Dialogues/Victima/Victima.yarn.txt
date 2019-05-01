@@ -19,6 +19,6 @@ colorID: 0
 position: 0,0
 parent: 
 ---
-<B>Lo siento companiero.
+<B>Lo siento compañero.
 No he encontrado ningun arma que pueda ser vinculada a la victima.
 ===

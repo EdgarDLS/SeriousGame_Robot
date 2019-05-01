@@ -61,9 +61,9 @@ por supuesto.
 Interrogar a los “sospechosos”
 ¿no? 
 ¿Qué quieres saber?
-[[1.|Robot2.SegundaRespuesta]]
-[[2.|Robot2.SegundaRespuesta]]
-[[3.|Robot2.SegundaRespuesta]]
+[[¿Has sido tu quien lo mato?|Robot2.SegundaRespuesta]]
+[[Dime que ha pasado y quien es el culpable.|Robot2.SegundaRespuesta]]
+[[Ya puedes empezar a hablar o te mandare al chatarrero ¿Quién es el asesino? |Robot2.SegundaRespuesta]]
 ===
 title: Robot2.SegundaRespuesta
 tags: 
@@ -73,9 +73,9 @@ parent:
 ---
 <Y>No, yo no fui quien asesino a la víctima. 
 Tan solo me trajeron aquí para ser reparado, asique cuando me “trató” simplemente seguí sus instrucciones.
-[[1.|Robot2.TerceraRespuesta]]
-[[2.|Robot2.TerceraRespuesta]]
-[[3.|Robot2.TerceraRespuesta]]
+[[Entonces, ¿me puedes hablar más sobre ti?|Robot2.TerceraRespuesta]]
+[[Dime cuáles son tus funciones|Robot2.TerceraRespuesta]]
+[[Pues empieza contándome que eres capaz de hacer.|Robot2.TerceraRespuesta]]
 ===
 title: Robot2.TerceraRespuesta
 tags: 
@@ -87,9 +87,9 @@ parent:
 Claro
 un asesino jamás admitiría serlo…
 o el caso no sería interesante…
-[[1.|Robot2.CuartaRespuesta]]
-[[2.|Robot2.CuartaRespuesta]]
-[[3.|Robot2.CuartaRespuesta]]
+[[No te distraigas por favor.|Robot2.CuartaRespuesta]]
+[[Responda a la pregunta.|Robot2.CuartaRespuesta]]
+[[No te pongas a murmurar, contesta la pregunta ya.|Robot2.CuartaRespuesta]]
 ===
 title: Robot2.CuartaRespuesta
 tags: 
@@ -101,9 +101,9 @@ parent:
 Me dieron varias historias detectivescas tanto para probar como para desarrollar mi capacidad de observación para el trabajo que querían otorgarme.
 Sin embargo, después de tantos problemas lógicos, soluciones inusuales, los giros totales por una pista sorpresa…
 Acabe cogiéndole “gusto”, como suelen decir los humanos.
-[[1.|Robot2.QuintaRespuesta]]
-[[2.|Robot2.QuintaRespuesta]]
-[[3.|Robot2.QuintaRespuesta]]
+[[¿Y sobre tu trabajo?|Robot2.QuintaRespuesta]]
+[[Háblame de tu trabajo sin distracciones.|Robot2.QuintaRespuesta]]
+[[Vale, muy interesante. Vuelva a hablar de lo importante.|Robot2.QuintaRespuesta]]
 ===
 title: Robot2.QuintaRespuesta
 tags: 
@@ -117,9 +117,9 @@ Es decir, ayudo tanto a los pacientes con problemas psicológicos
 de allí que necesite buenas capacidades de observación
 y ayudo a médicos y enfermeros con los cuidados u operaciones.
 Por lo tanto, poseo conocimiento médico y sobre la anatomía humana.
-[[1.|Robot2.SextaRespuesta]]
-[[2.|Robot2.SextaRespuesta]]
-[[3.|Robot2.SextaRespuesta]]
+[[¿Y qué conclusión has llegado sobre los humanos?|Robot2.SextaRespuesta]]
+[[Dime como “ves” a las personas humanas.|Robot2.SextaRespuesta]]
+[[Y con todas esas “deducciones” que parloteas, ¿cómo crees que son los humanos?|Robot2.SextaRespuesta]]
 ===
 title: Robot2.SextaRespuesta
 tags: 
@@ -134,9 +134,9 @@ Los humanos sois nuestros creadores y una paradoja lógica.
 Intentáis hacer todas vuestras acciones de forma lógica y metódica pero siempre entra un factor irregular que hace que vuestras acciones sean difíciles de predecir.
 Por lo tanto
 me gusta mucho observaros y crear patrones algorítmicos que-
-[[1.|Robot2.SeptimaRespuesta]]
-[[2.|Robot2.SeptimaRespuesta]]
-[[3.|Robot2.SeptimaRespuesta]]
+[[¿Qué opinas sobre este caso?|Robot2.SeptimaRespuesta]]
+[[¿Has descubierto algo del crimen?|Robot2.SeptimaRespuesta]]
+[[Si dices que se te da tan bien deducir, ¿Qué dirías de este caso?|Robot2.SeptimaRespuesta]]
 ===
 title: Robot2.SeptimaRespuesta
 tags: 
@@ -146,9 +146,9 @@ parent:
 ---
 <Y>Bueno
 si me permite un par de observaciones…
-[[1.|Robot2.OctavaRespuesta]]
-[[2.|Robot2.OctavaRespuesta]]
-[[3.|Robot2.OctavaRespuesta]]
+[[Si, claro|Robot2.OctavaRespuesta]]
+[[Habla.|Robot2.OctavaRespuesta]]
+[[Si, va, habla.|Robot2.OctavaRespuesta]]
 ===
 title: Robot2.OctavaRespuesta
 tags: 
@@ -164,9 +164,9 @@ solo pudo hacerlo uno de los robots de la sala si nadie más entro en el edifici
 Sin embargo,
 ¿podría uno de los míos tener motivos para hacer algo así?
 A no ser que estuviese siguiendo órdenes de otra persona, no le veo sentido.
-[[1.|Robot2.NovenaRespuesta]]
-[[2.|Robot2.NovenaRespuesta]]
-[[3.|Robot2.NovenaRespuesta]]
+[[Entonces, insinúas que…|Robot2.NovenaRespuesta]]
+[[Habla claro.|Robot2.NovenaRespuesta]]
+[[¿A dónde quieres llegar?|Robot2.NovenaRespuesta]]
 ===
 title: Robot2.NovenaRespuesta
 tags: 
@@ -177,9 +177,9 @@ parent:
 <Y>Lo que insinuó, es que dejando de lado la supuesta defectuosidad.
 Podría ser que el asesino solo fuese un peón.
 Que algún tipo de virus comiera su comportamiento para asaltar a la víctima y crear un caso de habitación cerrada.
-[[1.|Robot2.Exit]]
-[[2.|Robot2.Exit]]
-[[3.|Robot2.Exit]]
+[[Ya veo, gracias|Robot2.Exit]]
+[[Entiendo, no hay más preguntas|Robot2.Exit]]
+[[Suficiente, voy a investigar a otro lado.|Robot2.Exit]]
 ===
 title: Robot2.Exit
 tags: 
